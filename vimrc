@@ -43,4 +43,6 @@ let g:syntastic_cpp_remove_include_errors = 1
 "Kep Binds
 "jk is escape
 inoremap jk <esc>
+"Spell-check set to F6
+map <F6> :setlocal spell! spelllang=en_us<CR>
 
