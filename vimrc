@@ -18,6 +18,9 @@ set hlsearch     "highlights maches
                  " split is created (or one is deleted, etc), but still allows
                  " me to manually resize things.
 
+"Pathogen to Start All Plugins
+execute pathogen#infect()
+
 "  Code folding.  Really feel like I should like this.  But vim makes too many
 "  dumb decisions and it just usually ends up annoying me.
 set foldenable
@@ -32,7 +35,8 @@ set tags=./tags,tags,../tags,/usr/include/tags
 
 "  Turn on syntax highlighting.
 syntax on
-hi Comment ctermfg=Blue
+"hi Comment ctermfg=Blue
+colorscheme monokai
 
 "  Stuff for csupport.
 "let g:C_AuthorName = 'Josh Hamacher'
