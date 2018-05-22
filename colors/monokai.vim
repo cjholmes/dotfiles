@@ -89,7 +89,7 @@ let s:darkgrey    = { "gui": "#232E33", "cterm": "236" }
 let s:coolgrey    = { "gui": "#506E79", "cterm": "241" }
 
 let s:pink        = { "gui": "#FC3488", "cterm": "197" }
-let s:green       = { "gui": "#A6E22E", "cterm": "148" }
+let s:green       = { "gui": "#A6E22E", "cterm": "41" }
 let s:aqua        = { "gui": "#66d9ef", "cterm": "81" }
 let s:blue        = { "gui": "#82B1FF", "cterm": "81" }
 let s:yellow      = { "gui": "#E6DB74", "cterm": "186" }
