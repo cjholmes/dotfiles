@@ -43,22 +43,22 @@ function cd {
 }
 
 #Asthetics
-#COLOR1="\[\033[0;36m\]"
-#COLOR2="\[\033[0;32m\]"
-#COLOR3="\[\033[0;36m\]"
-#COLOR4="\[\033[1;37m\]"
-#COLOR5="\[\033[0;30m\]"
+COLOR1="\[\033[0;36m\]"
+COLOR2="\[\033[0;92m\]"
+COLOR3="\[\033[0;36m\]"
+COLOR4="\[\033[1;37m\]"
+COLOR5="\[\033[0;30m\]"
 
-#PS1="$COLOR2($COLOR3\u@\h$COLOR2)-($COLOR1\w$COLOR2)$COLOR1\n$COLOR1$ $COLOR2)"
+PS1="$COLOR2($COLOR3\u@\h$COLOR2)-($COLOR1\w$COLOR2)$COLOR1\n$COLOR1$ $COLOR2)"
 #LS_COLORS="$LS_COLORS:di=00;33"
 
-#-($COLOR1\@$COLOR2 $COLOR1\d$COLOR2)  not neccesary right now since time is different
+-($COLOR1\@$COLOR2 $COLOR1\d$COLOR2)  not neccesary right now since time is different
 
-#if [ "$UID" = "0" ];
-#then
+if [ "$UID" = "0" ];
+then
 # I am root
-#COLOR2="\[\033[0;31m\]"
-#fi
+COLOR2="\[\033[0;31m\]"
+fi
 
 export PS1
 
