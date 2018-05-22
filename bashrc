@@ -5,8 +5,8 @@
 # |_.__/ \__,_|___/_| |_|
 
 # User specific aliases and functions
-export P4CONFIG=.p4env
-export PATH=/usr/local/bin/p4v.2012:$PATH
+#export P4CONFIG=.p4env
+#export PATH=/usr/local/bin/p4v.2012:$PATH
 
 
 #Search h files
@@ -44,15 +44,14 @@ function cd {
 
 #Asthetics
 COLOR1="\[\033[0;36m\]"
-COLOR2="\[\033[0;92m\]"
+COLOR2="\[\033[0;96m\]"
 COLOR3="\[\033[0;36m\]"
 COLOR4="\[\033[1;37m\]"
 COLOR5="\[\033[0;30m\]"
 
 PS1="$COLOR2($COLOR3\u@\h$COLOR2)-($COLOR1\w$COLOR2)$COLOR1\n$COLOR1$ $COLOR2)"
-#LS_COLORS="$LS_COLORS:di=00;33"
-
--($COLOR1\@$COLOR2 $COLOR1\d$COLOR2)  not neccesary right now since time is different
+#LS_COLORS=$LS_COLORS:'di=00;35' 
+#-($COLOR1\@$COLOR2 $COLOR1\d$COLOR2)  not neccesary right now since time is different
 
 if [ "$UID" = "0" ];
 then
@@ -82,3 +81,4 @@ alias modshellscripts='find . -type f -name "*.sh" -exec chmod 555 {} \;'
 alias find_Any='find_any'
 #Typos
 alias dc='cd';
+alias ls='ls --color=always'
