@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/daYnyXX/xmage/mage-server/config'
 let g:netrw_dirhist_2='/home/daYnyXX/.vim'
 let g:netrw_dirhist_3='/home/daYnyXX/.vim/.git'
+let g:netrw_dirhist_4='/home/daynyxx/vim-material-monokai/autoload'
+let g:netrw_dirhist_5='/home/daynyxx/OverTheWire'
+let g:netrw_dirhist_6='/home/daynyxx/.vim'

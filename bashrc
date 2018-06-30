@@ -43,13 +43,13 @@ function cd {
 }
 
 #Asthetics
-COLOR1="\[\033[0;36m\]"
+COLOR1="\[\033[1;32m\]"
 COLOR2="\[\033[0;96m\]"
-COLOR3="\[\033[0;36m\]"
+COLOR3="\[\033[1;32m\]"
 COLOR4="\[\033[1;37m\]"
 COLOR5="\[\033[0;30m\]"
 
-PS1="$COLOR2($COLOR3\u@\h$COLOR2)-($COLOR1\w$COLOR2)$COLOR1\n$COLOR1$ $COLOR2)"
+PS1="$COLOR3($COLOR2\u@\h$COLOR3)-($COLOR2\w$COLOR3)$COLOR1\n$COLOR2$ $COLOR3)"
 #LS_COLORS=$LS_COLORS:'di=00;35' 
 #-($COLOR1\@$COLOR2 $COLOR1\d$COLOR2)  not neccesary right now since time is different
 

@@ -35,7 +35,7 @@ set tags=./tags,tags,../tags,/usr/include/tags
 
 "  Turn on syntax highlighting.
 syntax on
-"hi Comment ctermfg=Blue
+hi Comment ctermfg=Blue
 colorscheme monokai
 
 "  Stuff for csupport.
@@ -76,11 +76,11 @@ if !exists("autocommands_loaded")
    autocmd BufReadPre /usr/include/sys/*.h set tabstop=4
 
    "  These are specific for Perforce.
-   if !exists("au_p4_cmd")
-     let au_p4_cmd=1
-     au BufEnter * call IsUnderPerforce()
-     au FileChangedRO * call P4Checkout()
-   endif
+"   if !exists("au_p4_cmd")
+"     let au_p4_cmd=1
+"     au BufEnter * call IsUnderPerforce()
+"     au FileChangedRO * call P4Checkout()
+"   endif
 
 endif
 
@@ -121,36 +121,36 @@ inoremap jk <esc>
 "-------------------------------------------------------------------------------
 
 " If this file is in Perforce, set a buffer-local variable.
-function IsUnderPerforce()
+"function IsUnderPerforce()
    "  Use the existence of this environment as an indicator of whether or not
    "  Perforce is set up.
-   if exists("$P4CONFIG")
+"   if exists("$P4CONFIG")
       "  Assume failure.
-      let b:inp4 = 0
+"      let b:inp4 = 0
 
       "  Perforce is set up.  Now try to determine if this file is in Perforce.
-      let l:cmd = "p4 have " . expand("%:p") . " 2>&1"
-      let l:rep = system(cmd)
-      if rep =~ ".*not under client's root.*"
-         echo "This file is not under your client root"
-      elseif rep =~ ".*not on client"
-         echo "This file is not part of your client"
-      else
-         let b:inp4 = 1
-      endif
-   else
-      echo "Is Perforce set up?"
-   endif
-endfunction
+"      let l:cmd = "p4 have " . expand("%:p") . " 2>&1"
+"      let l:rep = system(cmd)
+"      if rep =~ ".*not under client's root.*"
+"         echo "This file is not under your client root"
+"      elseif rep =~ ".*not on client"
+"         echo "This file is not part of your client"
+"      else
+"         let b:inp4 = 1
+"      endif
+"   else
+"      echo "Is Perforce set up?"
+"   endif
+"endfunction
 
 " Confirm with the user, then checkout a file from perforce.
-function P4Checkout()
-   if b:inp4 > 0
-      if (confirm("Checkout from Perforce?", "&Yes\n&No", 1) == 1)
-         call system("p4 edit " . expand("%:p") . " > /dev/null")
-         if v:shell_error == 0
-            set noreadonly
-         endif
-      endif
-    endif
-endfunction
+"function P4Checkout()
+"   if b:inp4 > 0
+"      if (confirm("Checkout from Perforce?", "&Yes\n&No", 1) == 1)
+"         call system("p4 edit " . expand("%:p") . " > /dev/null")
+"         if v:shell_error == 0
+"            set noreadonly
+"         endif
+"      endif
+"    endif
+"endfunction
