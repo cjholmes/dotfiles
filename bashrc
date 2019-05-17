@@ -42,7 +42,7 @@ function cd {
    builtin cd "$@" && ls
 }
 
-#Asthetics
+#A E S T H E T I C S
 COLOR1="\[\033[1;32m\]"
 COLOR2="\[\033[0;96m\]"
 COLOR3="\[\033[1;32m\]"
@@ -50,7 +50,7 @@ COLOR4="\[\033[1;37m\]"
 COLOR5="\[\033[0;30m\]"
 
 PS1="$COLOR3($COLOR2\u@\h$COLOR3)-($COLOR2\w$COLOR3)$COLOR1\n$COLOR2$ $COLOR3)"
-#LS_COLORS=$LS_COLORS:'di=00;35' 
+LS_COLORS=$LS_COLORS:'di=01;36' 
 #-($COLOR1\@$COLOR2 $COLOR1\d$COLOR2)  not neccesary right now since time is different
 
 if [ "$UID" = "0" ];
@@ -72,6 +72,7 @@ alias cls='clear'
 alias rm='rm -i'
 #confirmation on copy with just cp
 alias cp='cp -i'
+alias wget='wget -q'
 #confirmation of mv with just mv
 alias mv='mv -i'
 alias mi='make -j5 install'
@@ -82,3 +83,9 @@ alias find_Any='find_any'
 #Typos
 alias dc='cd';
 alias ls='ls --color=always'
+#ssh shortcuts
+alias colossus='ssh cjholmes@colossus.it.mtu.edu'
+alias guardian='ssh cjholmes@guardian.it.mtu.edu'
+#quick documents cd
+alias documents='cd /mnt/c/Users/cbdh2/OneDrive/Documents'
+

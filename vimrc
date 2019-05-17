@@ -6,12 +6,13 @@ set nowrap       " Do not wrap long lines.
 set sidescroll=2 " Scroll sideways by 2 columns at a time.
 set ruler        " Show position within file.
 set showmatch    " Show matching paranthesis.
+set rnu          " Set relative line number
 set laststatus=2 " Show status bar; 2 = always.
 set history=100  " How many lines of command history are kept.
 set wildmode=list:longest " Show possible filenames for completion.
 set incsearch    " Incremental search - one of the few things emacs got right.
 set noautoindent " I hate autoindent.
-set cindent      " Uh, maybe not.  This one might grow on me...
+"moved to only c set cindent      " Uh, maybe not.  This one might grow on me...
 set wildmenu     " Autocomplete options for menu commands
 set hlsearch     "highlights maches
 "set equalalways  " Keep all splits equal in size.  This takes effect when a new
@@ -35,7 +36,7 @@ set tags=./tags,tags,../tags,/usr/include/tags
 
 "  Turn on syntax highlighting.
 syntax on
-hi Comment ctermfg=Blue
+"hi Comment ctermfg=Blue
 colorscheme monokai
 
 "  Stuff for csupport.
@@ -75,12 +76,17 @@ if !exists("autocommands_loaded")
    autocmd BufReadPre /usr/include/*.h set tabstop=4
    autocmd BufReadPre /usr/include/sys/*.h set tabstop=4
 
+   " set cindent for c files only
+   autocmd BufReadPre *.c set cindent
+   autocmd BufReadPre *.cpp set cindent
+
+   autocmd BufReadPRe *.tex set wrap
    "  These are specific for Perforce.
-"   if !exists("au_p4_cmd")
-"     let au_p4_cmd=1
-"     au BufEnter * call IsUnderPerforce()
-"     au FileChangedRO * call P4Checkout()
-"   endif
+   "if !exists("au_p4_cmd")
+     "let au_p4_cmd=1
+     "au BufEnter * call IsUnderPerforce()
+     "au FileChangedRO * call P4Checkout()
+   "endif
 
 endif
 
@@ -93,7 +99,9 @@ map <F2> :setlocal spell! spelllang=en_us<CR>
 
 "  This is a little oddity that performs rot-13 on the contents of the current
 "  buffer.  Useless, but cool.
-map <F3> ggVGg?
+"map <F3> ggVGg?
+map <F3> <PageUp>
+map <F4> <PageDown>
 
 
 "  Comment (C++-style) visual blocks.
@@ -112,7 +120,7 @@ map <F9> :cnext<CR>
 map <F10> :cprev<CR>
 map <F11> :make clean all<CR>
 map <F12> :make<CR>
-
+map <F16> :setlocal spell! spelllang=en_us<CR>
 "jk is escape
 inoremap jk <esc>
 
@@ -129,17 +137,18 @@ inoremap jk <esc>
 "      let b:inp4 = 0
 
       "  Perforce is set up.  Now try to determine if this file is in Perforce.
-"      let l:cmd = "p4 have " . expand("%:p") . " 2>&1"
+"      let l:cmd = \"p4 have \" . expand("%:p") . \" 2>&1"
 "      let l:rep = system(cmd)
-"      if rep =~ ".*not under client's root.*"
-"         echo "This file is not under your client root"
-"      elseif rep =~ ".*not on client"
-"         echo "This file is not part of your client"
+"      if rep =~ \".*not under client's root.*"
+"         echo \"This file is not under your client root"
+"      elseif rep =~ \".*not on client"
+"         echo \"This file is not part of your client"
 "      else
 "         let b:inp4 = 1
 "      endif
 "   else
-"      echo "Is Perforce set up?"
+
+"echo \"Is Perforce set up?"
 "   endif
 "endfunction
 

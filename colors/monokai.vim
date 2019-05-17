@@ -80,9 +80,9 @@ endfunction
 
 let s:white       = { "gui": "#CDD3DE", "cterm": "253" }
 let s:black       = { "gui": "#263238", "cterm": "0" }
-let s:lightblack  = { "gui": "#2D2E27", "cterm": "0" }
-let s:lightblack2 = { "gui": "#383a3e", "cterm": "0" }
-let s:darkblack   = { "gui": "#1F292D", "cterm": "0" }
+let s:lightblack  = { "gui": "#2D2E27", "cterm": "234" }
+let s:lightblack2 = { "gui": "#383a3e", "cterm": "236" }
+let s:darkblack   = { "gui": "#1F292D", "cterm": "233" }
 let s:grey        = { "gui": "#3F565F", "cterm": "238" }
 let s:lightgrey   = { "gui": "#575b61", "cterm": "241" }
 let s:darkgrey    = { "gui": "#232E33", "cterm": "235" }
@@ -95,7 +95,6 @@ let s:blue        = { "gui": "#82B1FF", "cterm": "81" }
 let s:yellow      = { "gui": "#E6DB74", "cterm": "186" }
 let s:orange      = { "gui": "#FD9720", "cterm": "208" }
 let s:purple      = { "gui": "#ae81ff", "cterm": "141" }
-let s:purple2     = { "gui": "#ae81ff", "cterm": "141" }
 let s:red         = { "gui": "#e73c50", "cterm": "196" }
 let s:darkred     = { "gui": "#5f0000", "cterm": "52" }
 
@@ -110,17 +109,17 @@ let s:changebg    = { "gui": "#5f5f87", "cterm": "60" }
 
 " editor
 call s:h("Normal",        { "fg": s:white,      "bg": s:black })
-call s:h("ColorColumn",   {                     "bg": s:lightgrey })
-call s:h("CursorColumn",  {                     "bg": s:lightblack2 })
-call s:h("CursorLine",    {                     "bg": s:darkblack })
+call s:h("ColorColumn",   {                     "bg": s:black })
+call s:h("CursorColumn",  {                     "bg": s:black })
+call s:h("CursorLine",    {                     "bg": s:black })
 call s:h("NonText",       { "fg": s:lightgrey })
-call s:h("StatusLine",    { "fg": s:white,      "bg": s:darkblack })
-call s:h("StatusLineNC",  { "fg": s:darkgrey,   "bg": s:coolgrey,     "format": "reverse" })
+call s:h("StatusLine",    { "fg": s:white,      "bg": s:black })
+call s:h("StatusLineNC",  { "fg": s:darkgrey,   "bg": s:black,     "format": "reverse" })
 call s:h("WildMenu",      { "fg": s:white,      "bg": s:pink })
-call s:h("TabLine",       { "fg": s:white,      "bg": s:darkblack,    "format": "reverse" })
+call s:h("TabLine",       { "fg": s:white,      "bg": s:black,    "format": "reverse" })
 call s:h("Visual",        {                     "bg": s:lightgrey })
 call s:h("Search",        { "fg": s:black,      "bg": s:yellow })
-call s:h("MatchParen",    { "fg": s:black,      "bg": s:purple2 })
+call s:h("MatchParen",    { "fg": s:black,      "bg": s:purple })
 call s:h("Question",      { "fg": s:yellow })
 call s:h("ModeMsg",       { "fg": s:yellow })
 call s:h("MoreMsg",       { "fg": s:yellow })
