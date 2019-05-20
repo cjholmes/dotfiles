@@ -9,12 +9,15 @@ set showmatch    " Show matching paranthesis.
 set rnu          " Set relative line number
 set laststatus=2 " Show status bar; 2 = always.
 set history=100  " How many lines of command history are kept.
-set wildmode=list:longest " Show possible filenames for completion.
+set wildmode=longest:full,full " Show possible filenames for completion.
 set incsearch    " Incremental search - one of the few things emacs got right.
-set noautoindent " I hate autoindent.
-"moved to only c set cindent      " Uh, maybe not.  This one might grow on me...
-set wildmenu     " Autocomplete options for menu commands
 set hlsearch     "highlights maches
+set ignorecase   "Ignore the case of a search because reasons
+set smartcase    "If you search with caps it will assume case sensitive
+"set noautoindent " I hate autoindent.
+set autoindent
+"moved to only c set cindent
+set wildmenu     " Autocomplete options for menu commands
 "set equalalways  " Keep all splits equal in size.  This takes effect when a new
                  " split is created (or one is deleted, etc), but still allows
                  " me to manually resize things.
@@ -124,6 +127,15 @@ map <F16> :setlocal spell! spelllang=en_us<CR>
 "jk is escape
 inoremap jk <esc>
 
+nnoremap <Right> <C-w>l
+nnoremap <Left> <C-w>h
+nnoremap <Up> <C-w>k
+nnoremap <Down> <C-w>j
+
+inoremap <Right> <Nop>
+inoremap <Left> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
 "-------------------------------------------------------------------------------
 "  Functions
 "-------------------------------------------------------------------------------

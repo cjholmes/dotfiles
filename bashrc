@@ -87,5 +87,6 @@ alias ls='ls --color=always'
 alias colossus='ssh cjholmes@colossus.it.mtu.edu'
 alias guardian='ssh cjholmes@guardian.it.mtu.edu'
 #quick documents cd
-alias documents='cd /mnt/c/Users/cbdh2/OneDrive/Documents'
-
+alias vcts_all='cd /mnt/c/Users/cholmes/VCTS_ALL'
+alias vcts_sgs='cd /mnt/c/Users/cholmes/VCTS_SGS'
+alias workspace='cd /mnt/c/Users/cholmes/Workspace'
